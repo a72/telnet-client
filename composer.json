@@ -1,14 +1,15 @@
 {
-    "name": "graze/telnet-client",
+    "name": "a72/telnet-client",
     "description": "Telnet client written in PHP",
     "keywords": [
+        "a72",
         "graze",
         "telnet-client",
         "telnet",
         "client",
         "php"
     ],
-    "homepage": "https://github.com/graze/telnet-client",
+    "homepage": "https://github.com/a72/telnet-client",
     "license": "MIT",
     "authors": [
         {

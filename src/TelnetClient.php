@@ -219,7 +219,7 @@ class TelnetClient implements TelnetClientInterface
             try {
                 $character = $this->socket->read(1);
             } catch (Exception $e) {
-                throw new TelnetException('failed reading from socket', 0, $e);
+                throw new TelnetException("Error: failed reading from socket \n buffer:\n" . $buffer, 0, $e);
             }
 
             if (in_array($character, [$this->NULL, $this->DC1])) {
@@ -233,7 +233,7 @@ class TelnetClient implements TelnetClientInterface
             $buffer .= $character;
 
             // check for prompt
-            if ($this->promptMatcher->isMatch($prompt ?: $this->prompt, $buffer, $this->lineEnding)) {
+            if ($this->promptMatcher->isMatch($prompt ?: $this->prompt, $buffer)) {
                 break;
             }
 
